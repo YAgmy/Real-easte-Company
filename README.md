@@ -1,2 +1,2 @@
-# Real-easte-Company
+# real-estate-Company
 using Html,  CSS, jQuery and Bootstrap.
