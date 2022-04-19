@@ -18,26 +18,20 @@ body {
     margin: 100px 0;
 }
 .main-header {
-    animation: type 3s steps(22);
-    overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 4px solid var(--paragraph-color);
-    width: 11ch;
-    text-transform: uppercase;
     color: var(--id-color);
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: var(--paragraph-color);
+    padding: 10px 20px;
+    width: fit-content;
     margin: 0 auto;
-    width:fit-content
+    border-radius: 20px;
+    transition: all 0.5s;
 }
-@keyframes type {
-    0% {
-        width:0ch;
-    }
-    100% {
-        width: 10ch;
-    }
+.main-header:hover {
+    background-color: var(--id-color);
+    color: #fff;
 }
 .card {
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
@@ -52,7 +46,13 @@ body {
 .carousel-indicators [data-bs-target] {
     width: 10px !important;
     height: 10px !important;
+    background-color: #fff !important;
     border-radius: 50%;
+}
+@media only screen and (max-width: 767px) {
+    .landing-page .carousel-indicators [data-bs-target] {
+        display: none !important;
+    }
 }
 /* navbar */
 .navbar {
@@ -156,6 +156,41 @@ body {
     padding: 0 0 0 42px;
 }
 
+/* img Gallary */
+.gallary img {
+    max-width: 100%;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+
+}
+
+.gallary .main-img img {
+    height: 500px;
+    width: 700px;
+}
+
+.gallary .thumbnails {
+    overflow: hidden;
+}
+
+.thumbnails img {
+    float: left;
+    cursor: pointer;
+    border: 2px solid rgba(187, 187, 187, 0.515);
+    opacity: 0.7;
+}
+
+.thumbnails .act {
+    border: 2px solid rgb(255 96 0);
+    opacity: 1;
+}
+
+.thumbnails img:not(:last-child) {
+    margin-right: 0.5% !important;
+}
+
 
 /* portfolio section */
 .portfolio {
@@ -181,6 +216,11 @@ body {
 }
 .team p.fs {
     font-size:12px
+}
+.team svg:not(:host).svg-inline--fa,
+svg:not(:root).svg-inline--fa {
+    color:var(--id-color) !important;
+    cursor: pointer;
 }
 
 /* Footer section */
